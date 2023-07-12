@@ -1,19 +1,19 @@
 function getProjects(){
-    const urlGitHub = "https://api.github.com/users/Rainbow303/repos"
+    const urlGitHub = "https://api.github.com/users/EluanderAnimes/repos"
     var loadingElement = document.getElementById('loading')
 
     fetch(urlGitHub, {
         method: 'GET'
     })
-        .then((response) ==> response.json())
-        .then((response) ==> {
+        .then((response) => response.json())
+        .then((response) => {
         console.log(response),
         showProjects(response)
         loadingElement.style.display = 'none'
         })
-        .catch((e) ==> {
-                console.log(e),
-        })
+        .catch((e) => {
+                console.log(e);
+        });
 }
 
 function showProjects(data){
@@ -31,4 +31,4 @@ function showProjects(data){
     }
 }
 
-getProjects()
+getProjects();
